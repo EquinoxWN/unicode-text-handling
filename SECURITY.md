@@ -1,0 +1,27 @@
+# Security policy
+
+## Reporting a vulnerability
+
+Please report security problems privately through GitHub:
+**Security > Report a vulnerability** on this repository
+(`https://github.com/EquinoxWN/unicode-text-handling/security/advisories/new`). Do not open a public issue.
+
+Include what you found, how to reproduce it, and the impact you expect. You will get an answer
+within 7 days. Fixes are released as soon as they are ready, and you are credited unless you ask
+not to be.
+
+## Supported versions
+
+This project is pre-1.0. Only the latest commit on `main` receives fixes.
+
+## Scope
+
+- **In scope:** Wrong results from any implementation, disagreement between languages, crashes or unbounded resource use on any input, and the download step accepting a file that does not match its pinned checksum.
+- **Out of scope:** Performance problems and features listed for M2 or M3.
+
+## How this repository protects itself
+
+- Every GitHub Action is pinned to a full commit SHA, and workflows run with read-only
+  permissions and without persisted credentials.
+- Dependabot update pull requests are paused (`open-pull-requests-limit: 0`) so the repository keeps a single `main` branch; dependencies are updated by hand and checked by the CI audit.
+- CI runs lint, tests and a known-vulnerability check (pip-audit, npm audit, and OSV-Scanner on a CycloneDX SBOM of the Maven dependencies) on every push and pull request.

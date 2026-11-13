@@ -1,0 +1,17 @@
+{
+  "name": "unicode-text-handling",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Why names like 'José', '山田' or one emoji break search, sorting and length checks: text handled correctly in Java, Python and JS.",
+  "license": "MIT",
+  "type": "module",
+  "exports": "./src/index.js",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "lint": "node --check src/index.js && node --check src/text.js && node --check src/vectors.js && node --check src/conformance.js && node --check src/cli.js",
+    "report": "node src/cli.js report"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

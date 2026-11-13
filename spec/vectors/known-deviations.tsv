@@ -1,0 +1,6 @@
+# Documented cases where a runtime's default API disagrees with the Unicode 15.0.0 vectors.
+# language<TAB>suite<TAB>api<TAB>case key<TAB>applies from runtime Unicode version<TAB>reason
+# Tests expect exactly these failures (no more, no fewer) on a runtime at or above that version.
+js	grapheme	Intl.Segmenter	2701 200D 2701	17.0	U+2701 is no longer Extended_Pictographic in Unicode 17.0, so rule GB11 no longer joins it after a ZWJ.
+js	encoding	Intl.Segmenter	namaste	15.1	Rule GB9c (Unicode 15.1) keeps consonant + virama + consonant in one cluster: 3 graphemes, not 4.
+java	encoding	BreakIterator	namaste	15.1	Rule GB9c (Unicode 15.1) keeps consonant + virama + consonant in one cluster: 3 graphemes, not 4.
